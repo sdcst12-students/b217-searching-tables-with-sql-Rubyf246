@@ -24,6 +24,7 @@ How many Knights are in the table?
 780 knights
 
 Which class has the highest number of members?
+[(794,)] is Thief
 
 What is the ID number of the Jester with the most gold?
 
@@ -47,8 +48,8 @@ connection = sqlite3.connect(file)
 print(connection)
 
 cursor = connection.cursor()
-##query = "Pragma table_info (npc);"
-##cursor.execute(query)
+query = "Pragma table_info (npc);"
+cursor.execute(query)
 
 ##query = "SELECT COUNT(*) FROM npc"
 ##cursor.execute(query)
@@ -58,32 +59,76 @@ cursor = connection.cursor()
 
 #query = "select class from npc"
 
-query = "SELECT COUNT(*) from npc where class= 'Knight'"
+##query = "SELECT COUNT(*) from npc where class= 'Knight'"
+##cursor.execute(query)
+##results = cursor.fetchall ()
+##print(f"{results} is Knight")
+##
+##query = "SELECT COUNT(*) from npc where class= 'Monk'"
+##cursor.execute(query)
+##results = cursor.fetchall ()
+##print(f"{results} is Monk")
+##
+##query = "SELECT COUNT(*) from npc where class= 'Assassin'"
+##cursor.execute(query)
+##results = cursor.fetchall ()
+##print(f"{results} is Assassin")
+##
+##query = "SELECT COUNT(*) from npc where class= 'Sorcerer'"
+##cursor.execute(query)
+##results = cursor.fetchall ()
+##print(f"{results} is Sorcerer")
+##
+##query = "SELECT COUNT(*) from npc where class= 'Ranger'"
+##cursor.execute(query)
+##results = cursor.fetchall ()
+##print(f"{results} is Ranger")
+##
+##query = "SELECT COUNT(*) from npc where class= 'Priest'"
+##cursor.execute(query)
+##results = cursor.fetchall ()
+##print(f"{results} is Priest")
+##
+##query = "SELECT COUNT(*) from npc where class= 'Samurai'"
+##cursor.execute(query)
+##results = cursor.fetchall ()
+##print(f"{results} is Samurai")
+##
+##query = "SELECT COUNT(*) from npc where class= 'Barbarian'"
+##cursor.execute(query)
+##results = cursor.fetchall ()
+##print(f"{results} is Barbarian")
+##
+##query = "SELECT COUNT(*) from npc where class= 'Bard'"
+##cursor.execute(query)
+##results = cursor.fetchall ()
+##print(f"{results} is Bard")
+##
+##query = "SELECT COUNT(*) from npc where class= 'Thief'"
+##cursor.execute(query)
+##results = cursor.fetchall ()
+##print(f"{results} is Thief")
+##
+##query = "SELECT COUNT(*) from npc where class= 'Warrior'"
+##cursor.execute(query)
+##results = cursor.fetchall ()
+##print(f"{results} is Warrior")
+##
+##query = "SELECT COUNT(*) from npc where class= 'Jester'"
+##cursor.execute(query)
+##results = cursor.fetchall ()
+##print(f"{results} is Jester")
+##
+##query = "SELECT COUNT(*) from npc where class= 'Sage'"
+##cursor.execute(query)
+##results = cursor.fetchall ()
+##print(f"{results} is Sage")
+##
+
+query = "SELECT * from npc ORDER BY gold ASC;"
 cursor.execute(query)
-query = "SELECT COUNT(*) from npc where class= 'Monk'"
-cursor.execute(query)
-query = "SELECT COUNT(*) from npc where class= 'Assassin'"
-cursor.execute(query)
-query = "SELECT COUNT(*) from npc where class= 'Sorcerer'"
-cursor.execute(query)
-query = "SELECT COUNT(*) from npc where class= 'Ranger'"
-cursor.execute(query)
-query = "SELECT COUNT(*) from npc where class= 'Priest'"
-cursor.execute(query)
-query = "SELECT COUNT(*) from npc where class= 'Samurai'"
-cursor.execute(query)
-query = "SELECT COUNT(*) from npc where class= 'Barbarian'"
-cursor.execute(query)
-query = "SELECT COUNT(*) from npc where class= 'Bard'"
-cursor.execute(query)
-query = "SELECT COUNT(*) from npc where class= 'Thief'"
-cursor.execute(query)
-query = "SELECT COUNT(*) from npc where class= 'Warrior'"
-cursor.execute(query)
-query = "SELECT COUNT(*) from npc where class= 'Jester'"
-cursor.execute(query)
-query = "SELECT COUNT(*) from npc where class= 'Sage'"
-cursor.execute(query)
+
+
+
 results = cursor.fetchall ()
 print(results)
-
